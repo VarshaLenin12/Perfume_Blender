@@ -1,0 +1,186 @@
+.top-note-container {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #d5e8fd; /* very mild blue */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.note-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.note-tile {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-tile:hover {
+  transform: scale(1.05);
+}
+
+.note-image {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-bottom: 1px solid #ccc;
+}
+
+.note-title {
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.sub-options {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #ffffff;
+}
+
+.sub-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  background-color: #f0f0ff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sub-button:hover {
+  background-color: #e0e0e0;
+}
+
+.flying-note {
+  position: fixed;
+  z-index: 1000;
+  background: transparent;
+  width: 40px;              /* Smaller width */
+  height: auto;
+  transition: transform 2s ease-in-out, opacity 5s ease-in-out;  /* Slower animation */
+  pointer-events: none;
+}
+
+
+.flask-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.flask-image {
+  background: transparent;
+  width: 80px;
+  height: auto;
+}
+
+.next-button, .predict-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #a57eff;       /* Soft blue */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-button:hover {
+  background-color: #4a8ac4;
+  transform: translateY(-2px);
+}
+
+.next-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Full-screen overlay for popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent */
+  backdrop-filter: blur(6px); /* blur the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* White popup box */
+.popup-box {
+  background: rgb(224, 224, 224);
+  padding: 25px 35px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,1);
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+.popup-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.popup-prediction {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #32794e;
+}
+
+.popup-close-btn {
+  padding: 8px 15px;
+  background: #c24245;
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-close-btn:hover {
+  background: #e63946;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
